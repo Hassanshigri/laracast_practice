@@ -15,7 +15,7 @@ class RegisterUserController extends Controller
     public function store(){
         $validatedattributes = request()->validate([
             'first_name'=>['required'],
-            'first_name'=>['required'],
+            'last_name'=>['required'],
             'email'=>['required','email'],
             'password'=>['required',Password::min(6),'confirmed'],
         ]);
@@ -26,4 +26,6 @@ class RegisterUserController extends Controller
 
         return redirect('/jobs');
     }
+
+    
 }

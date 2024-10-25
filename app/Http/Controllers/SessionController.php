@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rules\Password;
 
 class SessionController extends Controller
 {
@@ -12,6 +13,11 @@ class SessionController extends Controller
     }
     public function store()
     {
-        dd(request()->all());
+        request()->validate([
+            'first_name'=>['required'],
+            'first_name'=>['required'],
+            'email'=>['required','email'],
+            'password'=>['required',Password::min(6),'confirmed'],
+        ]);
     }
 }

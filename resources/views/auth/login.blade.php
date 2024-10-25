@@ -21,7 +21,7 @@
 
                         <div class="mt-2">
 
-                            <x-form-input name="email" id="email" placeholder="doe@gmail.conm" required/>
+                            <x-form-input name="email" id="email" :value="old('email')" placeholder="doe@gmail.conm" required/>
                             <x-form-error name="email" />
 
                         </div>
@@ -35,7 +35,7 @@
 
                         <div class="mt-2">
 
-                            <x-form-input name="password" id="password" placeholder="1234567" required/>
+                            <x-form-input name="password" id="password" type="password" placeholder="1234567" required/>
                             <x-form-error name="password" />
 
                         </div>
